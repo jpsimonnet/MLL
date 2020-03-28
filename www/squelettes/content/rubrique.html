@@ -1,0 +1,64 @@
+ 
+	<h2 class="titre-rubrique2 ">[(#ID_SECTEUR|!={#ID_RUBRIQUE}|oui)[(#INFO_TITRE{rubrique,#ID_SECTEUR})] - ] [(#INFO_TITRE{rubrique,#ID_RUBRIQUE})]</h2>
+		
+    <div class="liste-droits contenu-texte col-xs-12  col-sm-4 ">  
+      <BOUCLE_contenu(RUBRIQUES){id_rubrique=#ID_SECTEUR}>
+      [(#REM) Si aucun article, affiche un plan de la rubrique ]
+			<B_sous_rubriques>
+			<div class="menu menu_rubriques">
+				<strong>Summary</strong>
+				<ul class="list-group">
+					<BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre}{!par date}>
+					<li>
+						<a href="#URL_RUBRIQUE" class="#EXPOSE{exposes } list-group-item "><strong>#TITRE</strong></a>
+	
+						[(#REM) Une boucle recursive pour le mini plan]
+						<B_miniplan>
+						<ul>
+							<BOUCLE_miniplan(RUBRIQUES) {id_parent} {par num titre}{!par date}>
+							<li>
+								<a href="#URL_RUBRIQUE" class="#EXPOSE{exposes } list-group-item">#TITRE</a>
+								<BOUCLE_m2(BOUCLE_miniplan)></BOUCLE_m2>
+							</li>
+							</BOUCLE_miniplan>
+						</ul>
+						</B_miniplan>
+	
+					</li>
+					</BOUCLE_sous_rubriques>
+				</ul>
+				</div>
+			</B_sous_rubriques>
+	</BOUCLE_contenu>
+      </div>
+
+    <div class="contenu-texte contenu-rubrique col-xs-12   col-sm-8">	    
+	  	
+	  	<BOUCLE_rub1(RUBRIQUES){id_rubrique}>
+	  	[<h3 class="#EDIT{titre} titre-page">(#TITRE)</h3>]
+	  	[<div class="#EDIT{descriptif} descriptif">(#DESCRIPTIF)</div>]
+        [<div class="contenu-chapeau"><div class="#EDIT{texte} chapeau">(#TEXTE)</div></div>] 
+       
+        
+      <B_quelrub4>
+        <ul>
+	     <BOUCLE_quelrub4(RUBRIQUES){id_parent}> 
+	        [<li><a href="#URL_RUBRIQUE">(#TITRE)</a></li>]
+        </BOUCLE_quelrub4>
+        </ul>
+        </B_quelrub4>
+        
+	    <div class=" ">
+	        <B_arts11>
+	          <div class="list-group">
+	        <BOUCLE_arts11(ARTICLES){id_rubrique}{par num titre,titre}>
+		          [<a  class="list-group-item" href="#URL_ARTICLE"> (#TITRE)</a>]
+	        </BOUCLE_arts11>
+	          </div>
+	        </B_arts11>    
+	    </div>
+      [<div class="notes"><h3><:info_notes:></h3>(#NOTES)</div>]
+    
+     </BOUCLE_rub1>
+    </div>
+ 

@@ -1,0 +1,161 @@
+.todo {opacity: 0.5;}
+.todo:hover {opacity: 1;}
+
+.spip-admin-bloc,
+.spip-admin-float {
+  z-index: 1100 !important;
+  right: 50%  !important;
+  left: 50% !important;
+}	
+#spip-debug, #spip-debug-header {
+	background-color: transparent;
+	font-family: Verdana, Geneva, sans-serif;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	width: 100%;
+	height: 10%;
+	}
+
+
+.item,.caption {
+	position: relative;
+	.boutons.magnets {
+		position: absolute;
+		right: 0;
+		bottom:0;
+		display: none;
+	}
+	@media (min-width: 768px) {
+		&:hover {
+			.boutons.magnets {
+				display: block;
+			}
+		}
+	}
+}
+
+.yamm-content h1 span {
+	display: block;
+}
+.yamm-content .texte_libre {
+	display: inline;
+	color: inherit;
+	font-size: inherit;
+	padding: 0;
+}
+
+
+
+/* carte des regions */
+.map-container {text-align: center}
+.map-container .jqvmap-block {display: inline-block}
+#regions-agenda .titre-rubrique + .texte> p:first-of-type {
+	margin-top: 25px;
+	font-weight: bold;
+	color: @couleur-base;
+}
+
+@media print {
+
+	h1.visible-print-block {
+		margin:10px auto;
+		width: 95%;
+		font-weight: bold;
+		color:@couleur-base !important; 
+		}
+		
+	#contenu {
+    padding-top: 10px !important;
+	}
+	
+	hr {display: none;}
+	
+	.contenu-texte hr.separator {
+    width: 40% !important;
+    margin: 20px auto !important;
+    height: 1px !important;
+    color: #333 !important;
+    background: #333 !important;
+}
+	
+	#contenu .contenu-inner {
+		padding: 0;
+	}
+	
+	.contenu-article .chapeau, .contenu-article .ps {
+		margin:10px auto;
+		text-align: center;
+	}
+	
+	h2.titre-page-centre {
+		margin: 15px 0;
+	}
+	
+	.navbar-fixed-top {
+		top:auto;
+		position:relative;
+	    right: auto;
+	    left: auto;
+    }
+    
+    .adapt-img-wrapper img {
+    width: 50% !important;
+	}
+	
+
+	
+	.article-infos-block {
+		margin:0;
+	}
+	    
+    .container, .contenu-article {
+	    width: 95%;
+	    margin:0 auto;
+	    max-width: 95%;
+    }
+	
+	header, .liens-header-top, .navbar-nav, .socialshare, .feedback, .article-question, .qui-sommes-nous, .contact, .footer-sitemap, .footer-copyright img, #retour-en-haut, .article-infos-block.col-xs-4.col-sm-2 > p {
+		display: none;
+	}
+	
+	footer .footer-copyright {
+    font-weight: normal;
+    font-size: 10px !important;
+    
+    		.col-md-8{
+	    		width:60%;
+	    		float:left;
+    		}
+    		
+    		.col-md-4{
+	    		width:40%;
+	    		float:right
+	    		
+    		}
+    }
+
+	
+	.navbar, h1.sr-only {display: block;}
+	
+	a[href]:after {
+    	content: "";
+	}
+	
+	.breadcrumb {
+		margin:0;
+		padding: 0;	
+		a {
+			text-decoration: none;
+		}
+	}
+	
+	.contenu-texte {
+	   a[href]:after {
+	   	content: " (" attr(href) ")";
+		}  
+    }
+	
+}
+
+

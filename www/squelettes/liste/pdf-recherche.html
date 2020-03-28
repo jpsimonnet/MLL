@@ -1,0 +1,21 @@
+[(#REM) Articles trouves ]
+<B_pdf>
+<div class="liste resultats articles">
+	#ANCRE_PAGINATION
+	<h3>#GRAND_TOTAL results in pdf(s) documents</h3>
+	<ul class="liste-items">
+		<BOUCLE_pdf(spip_documents_pages){contenu_page LIKE %#ENV{recherche}%}{id_document !IN 1,2,3,4,5,5,6,7,8}{pagination 20}>
+			<BOUCLE_artdoc(spip_documents_liens){id_document=#ID_DOCUMENT}{objet=article}{0,2}>
+			<B_art><li class="item"><BOUCLE_art(ARTICLES){id_article=#ID_OBJET}{0,2}>
+			 <a href="#URL_ARTICLE" class="btn-left">
+			 <small><BOUCLE_ariane(HIERARCHIE){id_article}{1,9}{" > "}> [(#TITRE)] </BOUCLE_ariane></small> [</br><i class="fa fa-eye" aria-hidden="true"></i>  <strong>(#TITRE) </strong></a>]
+			 <a target="blank" class="btn-left" href="spip.php?page=pdfjs&id_document=#ID_DOCUMENT#page=#NUM_PAGE"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Pdf - page #NUM_PAGE</a> 	 
+			</BOUCLE_art>
+			</li>
+			</B_art>
+			</BOUCLE_artdoc>
+		</BOUCLE_pdf>
+	</ul>
+	[<div class="pagination">(#PAGINATION)</div>]
+</div>
+</B_pdf>

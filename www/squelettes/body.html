@@ -1,0 +1,19 @@
+<body>
+	<h1 class="visible-print-block">#NOM_SITE_SPIP</h1>
+	<header id="header" role="banner">
+			<INCLURE{fond=header/#ENV{type-page},env} />
+	</header><!-- /#header -->
+	<div id="contenu" role="main">
+		 
+		<div class="contenu-inner">
+			<div class="container">
+				<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+				<INCLURE{fond=content/#ENV{type-page},env} />
+			</div>
+		</div>
+	</div><!-- /#contenu -->
+
+	<footer id="footer" role="contentinfo">
+		<INCLURE{fond=footer/#ENV{type-page},env} />
+	</footer><!-- /#footer -->
+</body>

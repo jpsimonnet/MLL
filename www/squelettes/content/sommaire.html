@@ -1,0 +1,146 @@
+ 
+
+<div class="intro">
+	
+	<div class="col-md-10 col-md-offset-1 intro-recherche" >
+		<form action="spip.php?page=recherche" method="get"><div>
+	<input name="page" value="recherche" type="hidden">
+	
+	<label for="recherche" class="muted sr-only">Search:</label>
+	<div class="input-append input-group">
+		<input placeholder="Enter a keyword to search the law database" style="min-height: 55px;
+		color: #000;
+	    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #fff;
+    " type="search" class="search text search-query form-control" name="recherche" id="recherche" accesskey="4" autocapitalize="off" autocorrect="off">
+    <span class="btn-group input-group-btn">
+			<button style="min-width: 65px;min-height: 55px;font-size: 22px;" type="submit" class="btn btn-warning" title="Search"><span class="glyphicon glyphicon-search"></span></button>
+		</span>
+
+	</div>
+	</div>
+	</form>
+	
+	
+					<div class="text-center" style="margin-top:2em">
+						<a href="#quote" class="btn btn-xs btn-menu">Quote</a>
+						<a href="#intro" class="btn btn-xs btn-menu">Introduction</a> 
+						<a href="#news" class="btn btn-xs btn-menu">News</a> 
+						<a href="#websites" class="btn btn-xs btn-menu">Websites</a>
+					 </div>
+
+	
+	<span class="sep hidden">OR</span>
+	
+	
+	<a class="btn btn-block btn-lg clearfix hidden" role="button" data-toggle="collapse" href="#browse" aria-expanded="false" aria-controls="browse">Browse</a>
+	
+	<div class="collapse" id="browse">
+		<p>lmk mlk mlk mlk mlk mlkml 
+			lkj lklkj kljkl kl 
+			lk jlkj lkj j 
+		</p>
+	</div>
+	
+	</div>
+	
+
+	
+</div>
+ 
+ 
+ 
+
+<div>
+		    
+		    <div id="quote" class="container contenu-texte guidance-intro">
+			      <BOUCLE_overview1(RUBRIQUES){id_rubrique=21}{tout_voir}>
+			     
+				    <div class="text-center big-square"> 	    
+						[<div>(#TEXTE)</div>]					 
+					</div>
+			     
+			    </BOUCLE_overview1>
+
+		    </div>
+		    <a id="intro" name="intro" class="clearfix" style="display: block; margin-bottom: 120px"></a>
+		    <div  class="guidance clearfix container">
+
+		    <BOUCLE_overview(ARTICLES){id_rubrique=21}{par num titre}{tout_voir}>
+			
+		    <div class="img-guidance col-sm-6 col-xs-12 [(#PS*)]" style="background: url([(#LOGO_ARTICLE*|image_passe_partout{1200,1200}|image_recadre{1200,1200,center,eeeeee}|extraire_attribut{src})]) 50% 50%"> 
+			
+		    </div>
+			<div class="col-sm-6 col-xs-12 texte-guidance" >
+				[<h2 class="#EDIT{titre}">(#TITRE)</h2>]
+				[<p class="#EDIT{texte}">(#TEXTE)</p>]
+			</div>
+ 		    <div class="clearfix"></div>
+		    </BOUCLE_overview>
+	    </div>
+
+    <div class="container">
+	    
+
+
+ 
+        <div  class="row">
+	        
+	        <a id="websites" name="intro" class="clearfix" style="display: block; margin-bottom: 50px"></a>
+	        <a id="news" name="intro" class="clearfix" style="display: block; margin-bottom: 50px"></a>
+	        
+	        <div class="col-md-6">
+	            <BOUCLE_legalsites(RUBRIQUES){id_rubrique=15}>
+	            <h2 class="titre-rubrique2">#TITRE</h2>
+	            <BOUCLE_sites1(SITES){id_rubrique}{!par date}{0,15}>
+	             <div class="item">
+			<a href="#URL_SITE" class="media">
+	      <div class="media-left">
+		   [(#LOGO_SITE
+		   |image_passe_partout{120,90}
+           |image_recadre{120,90,center,eeeeee}
+           |image_aplatir{jpg,ffffff}
+           |inserer_attribut{class,media-object}
+           |inserer_attribut{alt,image article})]
+	      </div>
+	      <div class="media-body">
+		       
+	          [<h3 class="media-heading">(#NOM_SITE)</h3>]
+	          <p>[(#URL_SITE)]</p>
+	          [(#DESCRIPTIF)]
+	      </div>
+		  </a>
+			 
+		</div>
+ 	            </BOUCLE_sites1>
+	              </BOUCLE_legalsites>
+	             <a class="btn btn-block btn-default" href="#URL_PAGE{websites}">More websites</a>
+             </div>
+
+
+            <div class="col-md-6">
+	            
+	            <h2 class="titre-rubrique2">News on Facebook</h2>
+	            
+	                    <div class="boucle-actualites">
+		                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMyanmarLawLibrary&tabs=timeline&width=600&height=1822&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=233468223999414" width="600" height="1822" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+		    
+		    
+		    <a class="btn btn-block btn-default" href="https://www.facebook.com/MyanmarLawLibrary/">More news on Facebook</a>
+	    </div>
+	            
+	            
+	            
+	            
+	
+	             
+	            
+             </div>
+
+        </div>
+
+ 
+    </div><!-- /.container -->
+
+</div><!-- /#certification -->
+

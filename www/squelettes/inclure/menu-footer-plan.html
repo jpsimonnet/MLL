@@ -1,0 +1,29 @@
+<BOUCLE_menu(MENUS){id_menu?}{identifiant?}>
+
+	<div class="col-sm-6 col-md-4">
+		<BOUCLE_entrees1(MENUS_ENTREES){id_menu}{par rang}{1/3}>
+	    [<p class="footer-titre">(#MENUS_AFFICHER_ENTREE|extraire_balise{a}|textebrut)</p>]
+			<BOUCLE_sous_menu1(MENUS){id_menus_entree}>
+				#INCLURE{fond=inclure/menu-ul, env, id_menu, identifiant}
+			</BOUCLE_sous_menu1>
+		</BOUCLE_entrees1>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<BOUCLE_entrees2(MENUS_ENTREES){id_menu}{par rang}{2/3}>
+	    [<p class="footer-titre">(#MENUS_AFFICHER_ENTREE|extraire_balise{a}|textebrut)</p>]
+			<BOUCLE_sous_menu2(MENUS){id_menus_entree}>
+				#INCLURE{fond=inclure/menu-ul, env, id_menu, identifiant}
+			</BOUCLE_sous_menu2>
+		</BOUCLE_entrees2>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<BOUCLE_entrees3(MENUS_ENTREES){id_menu}{par rang}{3/3}>
+	    [<p class="footer-titre">(#MENUS_AFFICHER_ENTREE|extraire_balise{a}|textebrut)</p>]
+			<BOUCLE_sous_menu3(MENUS){id_menus_entree}>
+				#INCLURE{fond=inclure/menu-ul, env, id_menu, identifiant}
+			</BOUCLE_sous_menu3>
+		</BOUCLE_entrees3>
+	</div>
+	
+
+</BOUCLE_menu>

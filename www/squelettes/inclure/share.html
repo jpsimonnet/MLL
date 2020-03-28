@@ -1,0 +1,16 @@
+ 
+<p>Share this article : </p>
+<div class="socialshare">
+	<ul class="list-unstyled">
+		<li><a href="[(#VAL{https://www.facebook.com/sharer/sharer.php}|parametre_url{u,#ENV{url}|url_absolue})]"
+		       title="Partager sur Facebook"><i
+			class="fa fa-facebook"></i><span class="sr-only">Partager sur Facebook</span></a></li>
+		<li><a href="[(#VAL{http://twitter.com/home}|parametre_url{status,#ENV{title}|concat{' ',#ENV{url}|url_absolue}})]"
+		       title="Partager sur Twitter"><i
+			class="fa fa-twitter"></i><span class="sr-only">Partager sur Twitter</span></a></li>
+		<li><a href="[(#VAL{https://plus.google.com/share}|parametre_url{url,#ENV{url}|url_absolue})]"
+		       title="Partager sur Google Plus"><i
+			class="fa fa-google-plus"></i><span class="sr-only">Partager sur Google Plus</span></a></li>
+	</ul>
+</div>
+ 

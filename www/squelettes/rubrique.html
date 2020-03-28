@@ -1,0 +1,5 @@
+<BOUCLE_principale_rubrique(RUBRIQUES){id_rubrique}>
+#SET{composition,#COMPOSITION}
+[(#ID_RUBRIQUE|=={17}|oui)#SET{composition,project}]
+<INCLURE{fond=structure,env,id_secteur=#ID_SECTEUR,type-page=rubrique,composition=#GET{composition}} />
+</BOUCLE_principale_rubrique>

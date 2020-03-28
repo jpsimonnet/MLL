@@ -1,0 +1,68 @@
+[(#REM)
+	Head standard de toutes les pages ; les elements specifiques
+	(title, description) figurent dans le squelette article.html
+]
+
+<! commentaires de test >
+
+[(#REM) Preciser le charset ]
+<meta charset="#CHARSET">
+<meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+[(#REM) Lien vers le flux RSS du site ]
+[<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="(#URL_PAGE{backend})" />]
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,600italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+
+
+[<link rel="stylesheet" href="(#CSS{css/bootstrap.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/responsive.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/spip.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/spip.list.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CHEMIN{css/font-awesome.min.css}|timestamp)">]
+
+[(#REM) Balise permettant aux plugins d'inserer des fichiers CSS ]
+#INSERT_HEAD_CSS
+
+[(#REM) Feuille de style du theme]
+[<link rel="stylesheet" href="(#CSS{css/theme.css})" type="text/css" />]
+
+
+[(#CHEMIN{inc-theme-head.html}|oui)
+#INCLURE{fond=inc-theme-head,env}
+]
+
+
+
+[(#REM) Balise permettant aux plugins d'inserer des appels javascript ou css ;
+	C'est ici que SPIP va inserer l'appel de la librairie jQuery
+	Et appeler a la fin compacte_head pour agreger et compacter tout le head dans des fichiers statiques
+	si l'option est cochee dans Configuration
+]
+#INSERT_HEAD
+[<script type="text/javascript" src="(#CHEMIN{js/bootstrap.min.js}|timestamp)"></script>]
+[<script type="text/javascript" src="(#CHEMIN{js/main.js}|timestamp)"></script>]
+
+<!--[if lt IE 9]>
+[<script src="(#CHEMIN{js/html5.js}|timestamp)"></script>]
+[<script src="(#CHEMIN{js/respond.min.js}|timestamp)"></script>]
+<![endif]-->
+
+

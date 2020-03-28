@@ -1,0 +1,58 @@
+  <div class="actualites-liste col-xs-12 col-sm-9">
+   <h2 class="titre-rubrique2 ">News : legal news, agenda & project news</h2>     
+        <div class="boucle-actualites">
+		    <BOUCLE_actus1(ARTICLES){id_rubrique IN  14,19}{id_mot ?}{!par date}>
+			    <a href="#URL_ARTICLE" class="media">
+		         <div class="media-left">
+						<BOUCLE_logo(DOCUMENTS) {id_article} {extension IN gif,jpg,png}{id_mot=5}{0,1}>
+							[(#FICHIER
+							|image_reduire{130}
+							|image_recadre{130,130,'center center','ffffff'}
+							|image_aplatir{jpg,ffffff}
+							|inserer_attribut{alt, Lire la suite de : #TITRE}
+							)]
+							</BOUCLE_logo>
+							
+								[(#REM) ========    sinon on cherche la 1ere image =========   ]
+									<BOUCLE_logo2(DOCUMENTS) {id_article} {extension IN gif,jpg,png}{0,1}>
+										[(#FICHIER
+										|image_reduire{130}
+										|image_recadre{130,130,'center center','ffffff'}
+										|image_aplatir{jpg,ffffff}
+										|inserer_attribut{alt, Lire la suite de : #TITRE;}
+										|inserer_attribut{class,hidden-xs}
+										)]
+									</BOUCLE_logo2>
+									[(#REM) ========    sinon on prend le logo de la rubrique =========   ]
+											[(#LOGO_ARTICLE_RUBRIQUE
+											|image_reduire{130}
+											|image_recadre{130,130,'center center','transparent'}
+											|inserer_attribut{alt, Lire la suite de : #TITRE}
+											)]
+							<//B_logo2>
+							<//B_logo>
+		         </div>
+		         <div class="media-body">
+		             
+		             [<h4>(#TITRE)</h4>]
+		             [<p>(#DESCRIPTIF|sinon{#CHAPO})</p>]
+		              [<p><small class="">(#DATE|affdate{'F m, Y'})</small></p>]
+		         </div>
+		     </a>
+		    </BOUCLE_actus1>
+	    </div>
+        
+        
+    </div>
+    
+     <div class="list-group col-xs-12 col-sm-3">
+	     <h4>Tags</h4>
+	     			<a class=' list-group-item  [(#ENV{id_mot}|<{1}|oui)active] ' href="[(#SELF|parametre_url{'id_mot',''})]">All tags</a>
+	      <BOUCLE_themes(MOTS){id_groupe=2}{par num titre}>
+		  			<a class=' list-group-item #EXPOSE{active} ' href="[(#SELF|parametre_url{'id_mot',#ID_MOT})]">#TITRE</a>
+	     </BOUCLE_themes>
+	     
+	     
+     </div>
+     
+

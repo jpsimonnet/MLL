@@ -1,0 +1,11 @@
+<ul class="breadcrumb">
+	<li><a href="#URL_SITE_SPIP/">Home</a><span class="divider"> &gt; </span></li>
+	<li><a href="#URL_PAGE{recherche}">Search</a><span class="divider"> &gt; </span></li>
+	[<li><a href="[(#SELF|parametre_url{'rubrique', #ENV{rubrique}})]">(#ENV{rubrique})</a><span class="divider"> &gt; </span></li>]
+	[<li><a href="[(#SELF|parametre_url{'recherche', #ENV{recherche}})]">(#ENV{recherche})</a><span class="divider"> &gt; </span></li>]
+</ul>
+
+<div class="recherche-block recherche-mini">
+	<span class="recherche-titre">Search : </span>
+	#FORMULAIRE_RECHERCHE
+</div>

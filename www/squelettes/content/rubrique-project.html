@@ -1,0 +1,116 @@
+<div class="contenu-inner">
+			<div class="container">
+				<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+			</div>	
+
+		 	<B_overview1>
+				  <div class="container contenu-texte guidance-intro">
+				    <BOUCLE_overview1(RUBRIQUES){si #ID_RUBRIQUE|=={17}}{id_rubrique=22}{tout_voir}>
+					    <div class="text-center"> 
+					    [<div>(#TEXTE)</div>]
+					    </div>
+				    </BOUCLE_overview1>  
+				    <div class="center hidden" style="margin:4em auto"><img class="hr" src="squelettes/images/hr.png"> </div>
+		    	</div> 
+	    	</B_overview1>
+	    	
+	    	
+		    	 
+		    
+		    <B_overview>
+		    <div class="guidance clearfix container">
+			    <BOUCLE_overview(ARTICLES){si #ID_RUBRIQUE|=={17}}{id_rubrique=22}{par num titre}{tout_voir}>
+				    <div class="img-guidance col-xs-12 col-sm-6 [(#PS*)]"> 
+					    [<div class="#EDIT{titre} h1-like">(#TITRE)</div>]
+				    </div>
+					<div class="col-xs-12 col-sm-6 texte-guidance" >
+						
+						[<div class="#EDIT{texte} h3-like">(#TEXTE)</div>]
+					</div>
+		 		    <div class="clearfix"></div>
+			    </BOUCLE_overview>
+	    	</div>
+	    	</B_overview>
+	    	<a name="project"></a>
+	    	<div class="clearfix"></div>
+	    
+ 
+
+  
+
+    <div class="contenu-texte contenu-rubrique">
+
+    
+	    <div class=" ">
+	            <BOUCLE_agenda(RUBRIQUES){id_secteur=17}{id_rubrique!=17}{id_rubrique!=19}>
+	            <h2 class="titre-rubrique text-center  #EDIT{titre}">#TITRE</h2>
+	            <BOUCLE_art(ARTICLES){id_rubrique}{par num titre}{id_article!=304}>
+	            <div class="item-intro">
+	     
+	      <div class="center">
+		   [(#LOGO_ARTICLE_NORMAL
+		   |image_passe_partout{800,600}
+           |image_recadre{800,600,center,ffffff}
+           |image_aplatir{jpg,ffffff}
+           |inserer_attribut{class,img-adapt}
+           |inserer_attribut{alt,image article})]
+	      </div>
+	      <h2 class="titre-rubrique2 ">#TITRE</h2>
+		     
+		     [<div class="contenu-texte project-texte #EDIT{texte}"> 
+			     (#TEXTE)
+			     <div class="clearfix"></div>
+		     </div>]   
+
+		</div>
+	            </BOUCLE_art>
+	            
+	            <div class="center hidden" style="margin:10em auto"><img class="hr" src="squelettes/images/hr.png"> </div>
+	            
+	              </BOUCLE_agenda>
+	              
+	              
+	         <BOUCLE_agenda2(RUBRIQUES){si #ID_RUBRIQUE|!={17}}{id_secteur=17}{id_rubrique!=17}>
+	            <h2 class="titre-rubrique">#TITRE</h2>
+	            <BOUCLE_art2(ARTICLES){id_rubrique}{par num titre}>
+	            <div class="item-intro">
+			<a href="#URL_ARTICLE" class="media">
+	      <div class="media-left">
+		   [(#LOGO_ARTICLE_NORMAL
+		   |image_passe_partout{120,90}
+           |image_recadre{120,90,center,eeeeee}
+           |image_aplatir{jpg,ffffff}
+           |inserer_attribut{class,media-object}
+           |inserer_attribut{alt,image article})]
+	      </div>
+	      <div class="media-body">
+		       
+	          [<h3 class="media-heading">(#TITRE)</h3>]
+		        <p><time datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time></p>
+	          [(#INTRODUCTION{300})]
+	      </div>
+		  </a>
+			 
+		</div>
+	            </BOUCLE_art2>
+	              </BOUCLE_agenda2>
+	              
+	              
+	              
+	              
+	               <//B_agenda>
+	            
+             </div>
+             
+             
+            
+
+    </div>
+
+ 
+  
+
+ 
+
+ 
+</div>

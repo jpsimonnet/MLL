@@ -1,0 +1,59 @@
+<div id="menu-site" class="navbar-collapse collapse">
+
+    <BOUCLE_menu(MENUS){identifiant=nav-2017}>
+
+      <ul class="nav navbar-nav navbar-left">
+       		<BOUCLE_entrees(MENUS_ENTREES){id_menu}{par rang}>
+            <B_sous_menu>
+            <li class="dropdown yamm-fw">
+                #SET{menu,#MENUS_AFFICHER_ENTREE|extraire_balise{a}}
+                [(#GET{menu}
+                  |inserer_attribut{class,dropdown-toggle}
+                  |inserer_attribut{data-toggle,dropdown}
+                  |inserer_attribut{role,button}
+                  |inserer_attribut{aria-haspopup,true}
+                  |inserer_attribut{aria-expanded,false}
+                  |inserer_attribut{title,[Ouvrir le menu (#GET{menu}|textebrut)]}
+                  |replace{'</a>',' <span class="caret"></span></a>'})]
+                <BOUCLE_sous_menu(MENUS){id_menus_entree}>
+                <ul class="dropdown-menu container">
+                    <li>
+                        <div class="yamm-content container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <button class="btn btn-close sr-only sr-only-focusable" type="button" title="[Fermer le sous-menu (#GET{menu}|textebrut|attribut_html)]">Fermer</button>
+                                    #INCLURE{fond=inclure/menu-ul, env, id_menu, identifiant}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                </BOUCLE_sous_menu>
+            </li>
+            </B_sous_menu>
+            <li>[(#MENUS_AFFICHER_ENTREE|extraire_balise{a})]</li>
+            <//B_sous_menu>
+       		</BOUCLE_entrees>
+        <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle dropdown-toggle-search" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-search"></span><span class="sr-only">Search</span></a>
+            <ul class="dropdown-menu">
+                <li>
+                    <div class="yamm-content row menu-recherche">
+                        <div class="row ">
+                            <div class="col-xs-12">
+                                <button class="btn btn-close sr-only sr-only-focusable" type="button" title="close">Close</button>
+                                <div class="recherche-block">
+                                  <span class="recherche-titre">Your search</span>
+                                  #FORMULAIRE_RECHERCHE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+      </ul>
+
+    </BOUCLE_menu>
+
+</div><!--/.navbar-collapse -->

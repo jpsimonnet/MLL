@@ -1,0 +1,55 @@
+<BOUCLE_contenu(ARTICLES){id_article}>
+
+		<div class="row article-header">
+
+			<div class="col-xs-12">
+				
+				[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
+				[<h2 class="#EDIT{titre} titre titre-rubrique2">(#TITRE)[
+							<small class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</small>
+					]</h2>]	
+					
+					
+			</div>
+		</div>
+
+
+		<div class="row contenu-texte container">
+			<div class=" ">
+
+				[<div class="#EDIT{chapo} chapeau">(#CHAPO)</div> <hr class="separator">]
+				
+				<div class=" ">
+				<BOUCLE_documents_joints(DOCUMENTS) {id_article?}{extension IN pdf}{0,1}>[
+		 
+			<a href="(#URL_DOCUMENT)" type="#MIME_TYPE" class="bouton   btn-block"><strong class="  titre">  [Download the file : (#_contenu:TITRE)]</strong>
+			<small class="info_document">([<abbr title="<:info_document:> #TYPE_DOCUMENT" class="ext">(#EXTENSION|strtoupper)</abbr> - ][<span>(#TAILLE|taille_en_octets)</span>])</small> <i class="fa fa-download" aria-hidden="true"></i></a>
+			[<div class="#EDIT{descriptif} descriptif">(#DESCRIPTIF)</div>]
+      [<div class="#EDIT{credits} credits">(#CREDITS)</div>]
+		] 
+		
+		<br>
+		
+		<a href="#URL_PAGE{pdfjs, id_document=#ID_DOCUMENT}"   class="bouton btn-block"><strong class="  titre"> [See the document  (#_contenu:TITRE) on full screen] <i class="fa fa-arrows-alt" aria-hidden="true"></i></strong></a>
+		</BOUCLE_documents_joints>
+		</div>
+				
+				[<div class="#EDIT{texte} texte">(#TEXTE|adaptive_images)</div>]
+
+				[<div class="#EDIT{ps} cadregris ps surlignable"><h2><:info_ps:></h2>(#PS|adaptive_images)</div>]
+
+				[<div class="notes"><h3><:info_notes:></h3>(#NOTES)</div>]
+
+				<div class="clearfix"> </div>
+				
+				<div class="social"><INCLURE{fond=inclure/share,url=#URL_ARTICLE,titre=#TITRE} /></div>	
+
+			</div>
+		</div>
+	 <!-- /.container -->
+
+	 
+
+
+ 
+</BOUCLE_contenu>
