@@ -1,0 +1,21 @@
+<paquet
+	prefix="spipr_dist"
+	categorie="squelette"
+	version="0.4.15"
+	etat="test"
+	compatibilite="[3.0.0;3.1.*]"
+	logo="img/spipr_dist-32.png"
+	documentation="http://spipr.nursit.com/"
+>
+
+	<nom>SPIPr-dist</nom>
+
+	<auteur>Collectif SPIP</auteur>
+
+	<necessite nom="Zcore" compatibilite="[2.5.0;[" />
+	<necessite nom="lesscss" compatibilite="[0.7.0;[" />
+	<necessite nom="comments" compatibilite="[3.3.2;[" />
+	<necessite nom="bootstrap" compatibilite="[1.5.13;[" />
+
+	<utilise nom="albums" compatibilite="[1.0.0;[" />
+</paquet>

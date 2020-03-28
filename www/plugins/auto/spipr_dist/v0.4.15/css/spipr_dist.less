@@ -1,0 +1,41 @@
+@import "css/variables.less";
+@import "css/spip.variables.less";
+@import "css/mixins.less";
+
+.header {position: relative;}
+.header .accueil a {color: inherit;}
+.header .spip_logos {float:left;margin: @paddingLarge;margin-left: 0;margin-top:0;}
+.header .accueil {}
+#logo_site_spip {line-height: 1em;}
+#slogan_site_spip {display: block;}
+
+.header .formulaire_menu_lang {width: 100%;}
+.header .formulaire_menu_lang select {width: 100%;}
+
+.hero-unit .postmeta {clear: both;}
+
+.formulaire_recherche,.secondary .formulaire_recherche {padding-right: 42px+2*14px;} /* provisionner la largeur du bouton+padding sur le input.search */
+.formulaire_recherche form .input-append {width:100%;}
+.formulaire_recherche form input.search {width:100%;}
+
+.footer {
+  .clearfix;
+  margin-top:4em;
+  padding-top: 2em;
+  border-top:2px solid;
+  padding-bottom: 2em;
+  margin-bottom:0;
+  text-align: left;
+  position:relative;
+  .colophon {padding-right: 100px}
+  .generator {position: absolute;top:2em;right:0;max-width: 100px;}
+}
+
+.cartouche {margin-bottom: @emLineHeight;}
+.content.primary {min-height: 320px;}
+.content {
+  .postmeta .tags .inline {display: inline;}
+}
+
+.page_sommaire .breadcrumb {display: none}
+#nav > .navbar-inner {padding-left: 0;padding-right: 0}

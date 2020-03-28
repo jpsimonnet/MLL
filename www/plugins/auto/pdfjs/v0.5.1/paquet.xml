@@ -1,0 +1,16 @@
+<paquet
+	prefix="pdfjs"
+	categorie="multimedia"
+	version="0.5.1"
+	etat="stable"
+	compatibilite="[2.0.0;3.1.*]"
+	logo="prive/themes/spip/images/pdfjs-32.png"
+	documentation="http://contrib.spip.net/?article4078"
+>	
+	<nom>pdf.js</nom>
+	<auteur lien="http://mozilla.github.com/pdf.js/">andreas gal</auteur>
+	<credit lien="http://www.erational.org">erational (mise en plugin)</credit>  
+	<licence lien="https://github.com/mozilla/pdf.js/blob/master/LICENSE">license</licence>
+	<copyright>2011 Mozilla Foundation</copyright>
+	<utilise nom="gviewer" />
+</paquet>
